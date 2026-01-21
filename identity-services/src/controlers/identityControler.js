@@ -7,10 +7,10 @@ const validationcheck = require('../utils/Validation.js');
 const registeruser = async (req,res)=>{
     logger.info("Registration Endpoint Hit .........");
     try {
-    const error = validationcheck(req.body);
+    const {error, value} = validationcheck(req.body);
     if(error){
         logger.warn("validation error",error.details[0].message);
-        res.status(400).json({
+        return res.status(400).json({
             success: false,
             message: error.details[0].message
         })
@@ -19,16 +19,16 @@ const registeruser = async (req,res)=>{
     const {username,email,password}=req.body;
     let userexist = await User.findOne({ $or: [ { username } , { email } ] });
     if(userexist){
-        logger.alert("User Already exists!!!!!");
-        res.status(400).json({
+        logger.warn("User Already exists!!!!!");
+        return res.status(400).json({
             success: false,
             message: "User Already Exists Try Login."
         })
     }
-    userexist = new User(username,email,password);
-    await userexist.save();
-    logger.info("User Registered Successfully..",userexist._id);
-    const {accessToken ,refreshstring} = await generateToken(userexist);
+    const newUser = new User({username, email, password});
+    await newUser.save();
+    logger.info("User Registered Successfully..", newUser._id);
+    const {accessToken ,refreshstring} = await generateToken(newUser);
     res.status(201).json({
 
         success:true,

@@ -18,3 +18,40 @@
 {"level":"info","message":"Server is listening on port 3001","service":"identity-service","timestamp":"2026-01-21T20:08:31.102Z"}
 {"level":"info","message":"Redis connected","service":"identity-service","timestamp":"2026-01-21T20:08:31.110Z"}
 {"level":"info","message":"MongoDB connected successfully","service":"identity-service","timestamp":"2026-01-21T20:08:32.188Z"}
+{"level":"info","message":"Server is listening on port 3001","service":"identity-service","timestamp":"2026-01-21T21:04:48.536Z"}
+{"level":"info","message":"Redis connected","service":"identity-service","timestamp":"2026-01-21T21:04:48.543Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"identity-service","timestamp":"2026-01-21T21:04:49.648Z"}
+{"level":"info","message":"Server is listening on port 3001","service":"identity-service","timestamp":"2026-01-21T21:18:53.141Z"}
+{"level":"info","message":"Redis connected","service":"identity-service","timestamp":"2026-01-21T21:18:53.149Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"identity-service","timestamp":"2026-01-21T21:18:54.162Z"}
+{"level":"info","message":"Received POST request to /api/auth/register","service":"identity-service","timestamp":"2026-01-21T21:19:09.555Z"}
+{"level":"info","message":"Registration Endpoint Hit .........","service":"identity-service","timestamp":"2026-01-21T21:19:09.565Z"}
+{"level":"error","message":"Restration failed error Cannot read properties of undefined (reading '0')","service":"identity-service","stack":"TypeError: Cannot read properties of undefined (reading '0')\n    at registeruser (/home/nkh/node_micro_social/identity-services/src/controlers/identityControler.js:12:53)\n    at Layer.handleRequest (/home/nkh/node_micro_social/identity-services/node_modules/router/lib/layer.js:152:17)\n    at next (/home/nkh/node_micro_social/identity-services/node_modules/router/lib/route.js:157:13)\n    at Route.dispatch (/home/nkh/node_micro_social/identity-services/node_modules/router/lib/route.js:117:3)\n    at handle (/home/nkh/node_micro_social/identity-services/node_modules/router/index.js:435:11)\n    at Layer.handleRequest (/home/nkh/node_micro_social/identity-services/node_modules/router/lib/layer.js:152:17)\n    at /home/nkh/node_micro_social/identity-services/node_modules/router/index.js:295:15\n    at processParams (/home/nkh/node_micro_social/identity-services/node_modules/router/index.js:582:12)\n    at next (/home/nkh/node_micro_social/identity-services/node_modules/router/index.js:291:5)\n    at router.handle (/home/nkh/node_micro_social/identity-services/node_modules/router/index.js:186:3)","timestamp":"2026-01-21T21:19:09.571Z"}
+{"level":"info","message":"Server is listening on port 3001","service":"identity-service","timestamp":"2026-01-21T21:19:34.566Z"}
+{"level":"info","message":"Redis connected","service":"identity-service","timestamp":"2026-01-21T21:19:34.575Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"identity-service","timestamp":"2026-01-21T21:19:35.384Z"}
+{"level":"info","message":"Server is listening on port 3001","service":"identity-service","timestamp":"2026-01-21T21:19:45.664Z"}
+{"level":"info","message":"Redis connected","service":"identity-service","timestamp":"2026-01-21T21:19:45.673Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"identity-service","timestamp":"2026-01-21T21:19:46.421Z"}
+{"level":"info","message":"Received POST request to /api/auth/register","service":"identity-service","timestamp":"2026-01-21T21:20:32.223Z"}
+{"level":"info","message":"Registration Endpoint Hit .........","service":"identity-service","timestamp":"2026-01-21T21:20:32.227Z"}
+{"level":"info","message":"validation successful","service":"identity-service","timestamp":"2026-01-21T21:20:32.231Z"}
+{"buffer":{"data":[105,113,67,32,195,249,76,64,76,233,9,213],"type":"Buffer"},"level":"info","message":"User Registered Successfully..","service":"identity-service","timestamp":"2026-01-21T21:20:32.503Z"}
+{"level":"info","message":"Received POST request to /api/auth/register","service":"identity-service","timestamp":"2026-01-21T21:21:57.224Z"}
+{"level":"info","message":"Registration Endpoint Hit .........","service":"identity-service","timestamp":"2026-01-21T21:21:57.226Z"}
+{"level":"info","message":"validation successful","service":"identity-service","timestamp":"2026-01-21T21:21:57.228Z"}
+{"buffer":{"data":[105,113,67,117,195,249,76,64,76,233,9,218],"type":"Buffer"},"level":"info","message":"User Registered Successfully..","service":"identity-service","timestamp":"2026-01-21T21:21:57.456Z"}
+{"level":"info","message":"Received POST request to /api/auth/register","service":"identity-service","timestamp":"2026-01-21T21:22:00.555Z"}
+{"level":"info","message":"Registration Endpoint Hit .........","service":"identity-service","timestamp":"2026-01-21T21:22:00.556Z"}
+{"level":"info","message":"validation successful","service":"identity-service","timestamp":"2026-01-21T21:22:00.557Z"}
+{"level":"warn","message":"User Already exists!!!!!","service":"identity-service","timestamp":"2026-01-21T21:22:00.624Z"}
+{"level":"info","message":"Received POST request to /api/auth/register","service":"identity-service","timestamp":"2026-01-21T21:22:12.162Z"}
+{"level":"info","message":"Registration Endpoint Hit .........","service":"identity-service","timestamp":"2026-01-21T21:22:12.164Z"}
+{"0":"\"","1":"u","10":" ","11":"l","12":"e","13":"n","14":"g","15":"t","16":"h","17":" ","18":"m","19":"u","2":"s","20":"s","21":"t","22":" ","23":"b","24":"e","25":" ","26":"a","27":"t","28":" ","29":"l","3":"e","30":"e","31":"a","32":"s","33":"t","34":" ","35":"3","36":" ","37":"c","38":"h","39":"a","4":"r","40":"r","41":"a","42":"c","43":"t","44":"e","45":"r","46":"s","47":" ","48":"l","49":"o","5":"n","50":"n","51":"g","6":"a","7":"m","8":"e","9":"\"","level":"warn","message":"validation error","service":"identity-service","timestamp":"2026-01-21T21:22:12.165Z"}
+{"level":"info","message":"Received POST request to /api/auth/register","service":"identity-service","timestamp":"2026-01-21T21:22:17.373Z"}
+{"level":"info","message":"Registration Endpoint Hit .........","service":"identity-service","timestamp":"2026-01-21T21:22:17.375Z"}
+{"0":"\"","1":"p","10":" ","11":"w","12":"i","13":"t","14":"h","15":" ","16":"v","17":"a","18":"l","19":"u","2":"a","20":"e","21":" ","22":"\"","23":"P","24":"a","25":"s","26":"s","27":"@","28":"W","29":"o","3":"s","30":"r","31":"d","32":"!","33":"1","34":"2","35":"3","36":"\"","37":" ","38":"f","39":"a","4":"s","40":"i","41":"l","42":"s","43":" ","44":"t","45":"o","46":" ","47":"m","48":"a","49":"t","5":"w","50":"c","51":"h","52":" ","53":"t","54":"h","55":"e","56":" ","57":"r","58":"e","59":"q","6":"o","60":"u","61":"i","62":"r","63":"e","64":"d","65":" ","66":"p","67":"a","68":"t","69":"t","7":"r","70":"e","71":"r","72":"n","73":":","74":" ","75":"/","76":"^","77":"[","78":"a","79":"-","8":"d","80":"z","81":"A","82":"-","83":"Z","84":"0","85":"-","86":"9","87":"]","88":"{","89":"3","9":"\"","90":",","91":"3","92":"0","93":"}","94":"$","95":"/","level":"warn","message":"validation error","service":"identity-service","timestamp":"2026-01-21T21:22:17.375Z"}
+{"level":"info","message":"Received POST request to /api/auth/register","service":"identity-service","timestamp":"2026-01-21T21:22:21.795Z"}
+{"level":"info","message":"Registration Endpoint Hit .........","service":"identity-service","timestamp":"2026-01-21T21:22:21.796Z"}
+{"level":"info","message":"validation successful","service":"identity-service","timestamp":"2026-01-21T21:22:21.797Z"}
+{"buffer":{"data":[105,113,67,141,195,249,76,64,76,233,9,224],"type":"Buffer"},"level":"info","message":"User Registered Successfully..","service":"identity-service","timestamp":"2026-01-21T21:22:22.003Z"}
