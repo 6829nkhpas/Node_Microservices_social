@@ -4,93 +4,121 @@ const mongoose = require("mongoose");
 const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
-const ratelimitexpress = require("express-rate-limit");
-const ratelimitredis = require("rate-limiter-flexible");
-const redis = require("ioredis");
-const redisStore = require("rate-limit-redis");
+const { RateLimiterRedis } = require("rate-limiter-flexible");
+const Redis = require("ioredis");
+
 const router = require("../src/routes/identityRoutes.js");
 const errorhandler = require("../src/middleware/errorhandler.js");
 
-const PORT = process.env.PORT ||  3001;
+const PORT = process.env.PORT || 3001;
 const app = express();
 
-//moongodb connection
+/* ==============================
+   MongoDB Connection
+================================ */
 mongoose
-.connect(process.env.MONGO_URI)
-.then(() => {
-  logger.info("MongoDB connected successfully");
-})
-.catch((err) => {
-  logger.error("MongoDB connection failed", err);
+  .connect(process.env.MONGO_URI)
+  .then(() => logger.info("MongoDB connected successfully"))
+  .catch((err) => logger.error("MongoDB connection failed", err));
+
+/* ==============================
+   Redis Client
+================================ */
+const redisClient = new Redis(process.env.REDIS_URL);
+
+redisClient.on("connect", () => {
+  logger.info("Redis connected");
 });
 
+redisClient.on("error", (err) => {
+  logger.error("Redis error", err);
+});
 
-// redis client
-const redisClient = new redis(process.env.REDIS_URL);
-// middleware
+/* ==============================
+   Global Middleware
+================================ */
 app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
-app.use((req,res,next) =>{
-  logger.info(`Recived at ${req.method} Request to ${req.url}`);
-  logger.info(`Request body ${req.body}`);
+app.use((req, res, next) => {
+  logger.info(`Received ${req.method} request to ${req.url}`);
   next();
 });
-// redis rate limiter
 
-const redisLimiter = new ratelimitredis.RateLimiterRedis({
+/* ==============================
+   Rate Limiting (rate-limiter-flexible ONLY)
+================================ */
+
+/**
+ * Global API limiter
+ * Example: 100 requests per minute per IP
+ */
+const apiLimiter = new RateLimiterRedis({
   storeClient: redisClient,
-  keyPrefix: 'middleware',
-  points:10,
-  duration: 1
+  keyPrefix: "api",
+  points: 100,
+  duration: 60, // seconds
 });
-//redis rate limiting middleware
-app.use((req,res,next)=>{
-  redisLimiter.consume(req.ip)
-  .then(()=>next())
-  .catch(()=>{
-    logger.warn(" redie rate limiting excedded for ip add:",req.ip);
-    res.status(429).json({
-      error: "Too many requests"
-    });
-  });
+
+app.use("/api", async (req, res, next) => {
+  try {
+    await apiLimiter.consume(req.ip);
+    next();
+  } catch {
+    logger.warn("API rate limit exceeded", { ip: req.ip });
+    res.status(429).json({ error: "Too many requests" });
+  }
 });
-// express rate limiter for sensative endpoints
 
-const sensativeRateLimiter = ratelimitexpress({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max:100,
-  standardHeaders: true,
-  legacyHeaders:false,
-  handler: (req,res)=>{
-    logger.warn("express rate limiting excedded for ip add:",req.ip);
-    res.status(429).json({
-      error: "Too many requests"
-    });
-  },
-  store: new redisStore({ 
-    sendCommand: (...args)=> redisClient.call(...args),
-  })
-});;
+/**
+ * Sensitive auth limiter (login/register)
+ * Example: 5 attempts per 15 minutes per IP
+ */
+const authLimiter = new RateLimiterRedis({
+  storeClient: redisClient,
+  keyPrefix: "auth",
+  points: 15,
+  duration: 15 * 60, // seconds
+});
 
-// apply to the sensative endpoints
+const authRateLimitMiddleware = async (req, res, next) => {
+  try {
+    await authLimiter.consume(req.ip);
+    next();
+  } catch {
+    logger.warn("Auth rate limit exceeded", { ip: req.ip });
+    res.status(429).json({ error: "Too many authentication attempts" });
+  }
+};
 
-app.use("/api/auth/register",sensativeRateLimiter);
-app.use("/api/auth/login",sensativeRateLimiter);
+/* ==============================
+   Routes
+================================ */
+app.use("/api/auth/register", authRateLimitMiddleware);
+app.use("/api/auth/login", authRateLimitMiddleware);
 
-// routes
 app.use("/api/auth", router);
 
-// errorhandler
-app.use(errorhandler());
- //listning
+/* ==============================
+   Error Handler
+================================ */
+app.use(errorhandler);
 
- app.listen(PORT,()=>{
-  logger.info("server is listening on port",PORT);
- });
- //unhandled promise rejection
- process.on('unhandledRejection',(reason,promise)=>{
-  logger.error(`unhandledRejection at: `,promise, "reason:", reason);
- });
- 
+/* ==============================
+   Server Start
+================================ */
+app.listen(PORT, () => {
+  logger.info(`Server is listening on port ${PORT}`);
+});
+
+/* ==============================
+   Unhandled Promise Rejection
+================================ */
+process.on("unhandledRejection", (reason) => {
+  logger.error("Unhandled Promise Rejection", {
+    reason: reason instanceof Error ? reason.message : reason,
+    stack: reason?.stack,
+  });
+  process.exit(1);
+});

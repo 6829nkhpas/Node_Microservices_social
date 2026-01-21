@@ -11,4 +11,4 @@ const validationcheck =(data)=>{
     })
     return schema.validate(data);
 };
-modules.exports = validationcheck;
+module.exports = validationcheck;
