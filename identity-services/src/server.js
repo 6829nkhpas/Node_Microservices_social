@@ -19,3 +19,15 @@ mongoose
 .catch((err) => {
   logger.error("MongoDB connection failed", err);
 });
+
+// redis client
+const redisClient = new redis(process.env.REDIS_URL);
+// middleware
+app.use(helmet());
+app.use(cors());
+app.use(express.json());
+
+app.use((req,res,next) =>{
+  logger.info(`Recived at ${req.method} Request to ${req.url}`);
+  logger.info(`Request body ${req.body}`);
+});

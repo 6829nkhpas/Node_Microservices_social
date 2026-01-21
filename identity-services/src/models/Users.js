@@ -42,9 +42,9 @@ userschema.pre('save', async function(next){
     }
   
 })
-userschema.methods.comparePassword = async function (candidatePasword) {
+userschema.methods.comparePassword = async function (candidatePassword) {
     try {
-        return await argon2.verify(thi.password , candidatePasword)
+        return await argon2.verify(this.password , candidatePassword)
     } catch (error) {
         throw error
         
@@ -52,7 +52,6 @@ userschema.methods.comparePassword = async function (candidatePasword) {
     
 }
 userschema.index({username: 'text'});
- 
-const User = mongoose.model('User', userschema);    
 
+const User = mongoose.model('User', userschema);
 module.exports = User;
