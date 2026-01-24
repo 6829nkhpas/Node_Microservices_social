@@ -1,0 +1,10 @@
+{"0":"3","1":"0","2":"0","3":"0","level":"info","message":"application is Listning on port :","service":"api-service","timestamp":"2026-01-24T23:31:46.365Z"}
+{"level":"info","message":"API gateway is Runing on : undefined","service":"api-service","timestamp":"2026-01-24T23:31:46.367Z"}
+{"level":"info","message":"Identity Service is Runing on : http://localhost:3001","service":"api-service","timestamp":"2026-01-24T23:31:46.367Z"}
+{"level":"info","message":"Redis is Runing on : redis://localhost:6379","service":"api-service","timestamp":"2026-01-24T23:31:46.367Z"}
+{"level":"info","message":"Redis connected","service":"api-service","timestamp":"2026-01-24T23:31:46.376Z"}
+{"0":"3","1":"0","2":"0","3":"0","level":"info","message":"application is Listning on port :","service":"api-service","timestamp":"2026-01-24T23:32:05.991Z"}
+{"level":"info","message":"API gateway is Runing on : undefined","service":"api-service","timestamp":"2026-01-24T23:32:05.993Z"}
+{"level":"info","message":"Identity Service is Runing on : http://localhost:3001","service":"api-service","timestamp":"2026-01-24T23:32:05.993Z"}
+{"level":"info","message":"Redis is Runing on : redis://localhost:6379","service":"api-service","timestamp":"2026-01-24T23:32:05.994Z"}
+{"level":"info","message":"Redis connected","service":"api-service","timestamp":"2026-01-24T23:32:06.000Z"}
