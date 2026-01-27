@@ -2,6 +2,7 @@
 const User = require('../models/Users.js');
 const generateToken = require('../utils/generateToken.js');
 const logger = require('../utils/logger.js');
+const RefreshToken = require('../models/RefreshToken.js');
 
 const {validationcheck,logincheck} = require('../utils/Validation.js');
 
@@ -96,5 +97,54 @@ const loginuser = async (req,res)=>{
         
     }
 }
+//refresh token
 
-module.exports = {registeruser,loginuser};
+const refreshTokenuser = async (req,res)=>{
+    logger.info("Refresh Token Endpoint Hit .........");
+    try {
+        const { refreshToken } = req.body;
+        if (!refreshToken) {
+            logger.warn("No refresh token provided");
+            return res.status(400).json({
+                success: false,
+                message: "No refresh token provided"
+            });
+        }
+        // Further logic to validate and issue new tokens goes here
+        const storedToken = await RefreshToken.findOne({ Token: refreshToken });
+        if (!storedToken || storedToken.expiresAt <  Date.now()) {
+            logger.warn("Invalid or expired refresh token");
+            return res.status(401).json({
+                success: false,
+                message: "Invalid or expired refresh token"
+            });
+        }
+        const user = await User.findById(storedToken.User);
+        if (!user) {
+            logger.warn("User not found for the provided refresh token");
+             await RefreshToken.deleteOne({ _id: storedToken._id });
+            return res.status(401).json({
+                success: false,
+                message: "User not found"
+            });
+        }
+         await RefreshToken.deleteOne({ _id: storedToken._id });
+        const { accessToken, refreshstring } = await generateToken(user);
+       
+        logger.info("Refresh token successful", user.username);
+        res.status(200).json({
+            success: true,
+            message: "Token refreshed successfully",
+            accessToken,
+            refreshstring
+        });
+    } catch (error) {
+        logger.error("Refresh Token failed error",error);
+        res.status(500).json({
+            success: false,
+            message: "Internal Server Error"
+        })
+    }
+}
+    
+module.exports = {registeruser,loginuser,refreshTokenuser};
