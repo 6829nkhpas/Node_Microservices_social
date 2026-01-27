@@ -53,3 +53,13 @@
 {"level":"info","message":"Response from Identity Service for POST /loginuser: 404","service":"api-service","timestamp":"2026-01-27T20:55:21.310Z"}
 {"level":"info","message":"Received POST request to /v1/auth/loginuser","service":"api-service","timestamp":"2026-01-27T20:56:46.914Z"}
 {"level":"info","message":"Response from Identity Service for POST /loginuser: 404","service":"api-service","timestamp":"2026-01-27T20:56:46.922Z"}
+{"level":"info","message":"Received POST request to /v1/auth/login","service":"api-service","timestamp":"2026-01-27T20:59:50.354Z"}
+{"level":"info","message":"Response from Identity Service for POST /login: 200","service":"api-service","timestamp":"2026-01-27T20:59:50.557Z"}
+{"level":"info","message":"Received POST request to /v1/auth/register","service":"api-service","timestamp":"2026-01-27T21:01:53.476Z"}
+{"level":"info","message":"Response from Identity Service for POST /register: 201","service":"api-service","timestamp":"2026-01-27T21:01:53.804Z"}
+{"level":"info","message":"Received POST request to /v1/auth/login","service":"api-service","timestamp":"2026-01-27T21:02:10.842Z"}
+{"level":"info","message":"Response from Identity Service for POST /login: 400","service":"api-service","timestamp":"2026-01-27T21:02:10.907Z"}
+{"level":"info","message":"Received POST request to /v1/auth/login","service":"api-service","timestamp":"2026-01-27T21:02:16.247Z"}
+{"level":"info","message":"Response from Identity Service for POST /login: 400","service":"api-service","timestamp":"2026-01-27T21:02:16.387Z"}
+{"level":"info","message":"Received POST request to /v1/auth/login","service":"api-service","timestamp":"2026-01-27T21:02:18.479Z"}
+{"level":"info","message":"Response from Identity Service for POST /login: 400","service":"api-service","timestamp":"2026-01-27T21:02:18.485Z"}

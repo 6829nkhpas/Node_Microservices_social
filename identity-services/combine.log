@@ -89,3 +89,32 @@
 {"level":"info","message":"Received POST request to /api/auth/loginuser","service":"identity-service","timestamp":"2026-01-27T20:55:21.305Z"}
 {"level":"info","message":"Received POST request to /v1/auth/loginuser","service":"identity-service","timestamp":"2026-01-27T20:56:33.045Z"}
 {"level":"info","message":"Received POST request to /api/auth/loginuser","service":"identity-service","timestamp":"2026-01-27T20:56:46.917Z"}
+{"level":"info","message":"Server is listening on port 3001","service":"identity-service","timestamp":"2026-01-27T20:58:54.545Z"}
+{"level":"info","message":"Redis connected","service":"identity-service","timestamp":"2026-01-27T20:58:54.552Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"identity-service","timestamp":"2026-01-27T20:58:55.800Z"}
+{"level":"info","message":"Received POST request to /api/auth/login","service":"identity-service","timestamp":"2026-01-27T20:59:37.045Z"}
+{"level":"info","message":"Logging end point Hit...............","service":"identity-service","timestamp":"2026-01-27T20:59:37.048Z"}
+{"level":"info","message":"validation successful","service":"identity-service","timestamp":"2026-01-27T20:59:37.052Z"}
+{"buffer":{"data":[105,121,37,214,212,138,121,141,119,200,221,205],"type":"Buffer"},"level":"info","message":"Login successful","service":"identity-service","timestamp":"2026-01-27T20:59:37.294Z"}
+{"level":"info","message":"Received POST request to /api/auth/login","service":"identity-service","timestamp":"2026-01-27T20:59:50.357Z"}
+{"level":"info","message":"Logging end point Hit...............","service":"identity-service","timestamp":"2026-01-27T20:59:50.358Z"}
+{"level":"info","message":"validation successful","service":"identity-service","timestamp":"2026-01-27T20:59:50.359Z"}
+{"buffer":{"data":[105,121,37,214,212,138,121,141,119,200,221,205],"type":"Buffer"},"level":"info","message":"Login successful","service":"identity-service","timestamp":"2026-01-27T20:59:50.556Z"}
+{"level":"info","message":"Server is listening on port 3001","service":"identity-service","timestamp":"2026-01-27T21:01:47.528Z"}
+{"level":"info","message":"Redis connected","service":"identity-service","timestamp":"2026-01-27T21:01:47.535Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"identity-service","timestamp":"2026-01-27T21:01:48.699Z"}
+{"level":"info","message":"Received POST request to /api/auth/register","service":"identity-service","timestamp":"2026-01-27T21:01:53.489Z"}
+{"level":"info","message":"Registration Endpoint Hit .........","service":"identity-service","timestamp":"2026-01-27T21:01:53.491Z"}
+{"level":"info","message":"validation successful","service":"identity-service","timestamp":"2026-01-27T21:01:53.496Z"}
+{"buffer":{"data":[105,121,39,193,29,54,237,91,153,128,93,161],"type":"Buffer"},"level":"info","message":"User Registered Successfully..","service":"identity-service","timestamp":"2026-01-27T21:01:53.732Z"}
+{"level":"info","message":"Received POST request to /api/auth/login","service":"identity-service","timestamp":"2026-01-27T21:02:10.845Z"}
+{"level":"info","message":"Logging end point Hit...............","service":"identity-service","timestamp":"2026-01-27T21:02:10.846Z"}
+{"level":"info","message":"validation successful","service":"identity-service","timestamp":"2026-01-27T21:02:10.847Z"}
+{"level":"warn","message":"User not found .....","service":"identity-service","timestamp":"2026-01-27T21:02:10.905Z"}
+{"level":"info","message":"Received POST request to /api/auth/login","service":"identity-service","timestamp":"2026-01-27T21:02:16.250Z"}
+{"level":"info","message":"Logging end point Hit...............","service":"identity-service","timestamp":"2026-01-27T21:02:16.250Z"}
+{"level":"info","message":"validation successful","service":"identity-service","timestamp":"2026-01-27T21:02:16.251Z"}
+{"level":"warn","message":"Incorrect password Entered .....","service":"identity-service","timestamp":"2026-01-27T21:02:16.386Z"}
+{"level":"info","message":"Received POST request to /api/auth/login","service":"identity-service","timestamp":"2026-01-27T21:02:18.481Z"}
+{"level":"info","message":"Logging end point Hit...............","service":"identity-service","timestamp":"2026-01-27T21:02:18.482Z"}
+{"0":"\"","1":"e","10":"s","11":"t","12":" ","13":"b","14":"e","15":" ","16":"a","17":" ","18":"v","19":"a","2":"m","20":"l","21":"i","22":"d","23":" ","24":"e","25":"m","26":"a","27":"i","28":"l","3":"a","4":"i","5":"l","6":"\"","7":" ","8":"m","9":"u","level":"warn","message":"validation error","service":"identity-service","timestamp":"2026-01-27T21:02:18.484Z"}

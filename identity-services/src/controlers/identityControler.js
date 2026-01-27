@@ -62,27 +62,27 @@ const loginuser = async (req,res)=>{
      }
      logger.info("validation successful");
      const {email,password} = req.body;
-     const user = User.findOne(email);
+     const user = await User.findOne({email});
      if(!user){
          logger.warn("User not found .....");
-         res.status(400).json({
+         return res.status(400).json({
              success: false,
              message:"Invalid credentials please try Again"
          })
      }
-     const passwordCheck = user.comparePassword(password);
+     const passwordCheck = await user.comparePassword(password);
      if(!passwordCheck){
-         logger.warn("Inccorent password Entered .....");
-         res.status(400).json({
+         logger.warn("Incorrect password Entered .....");
+         return res.status(400).json({
              success: false,
-             message:"Inccorent password please try Again"
+             message:"Incorrect password please try Again"
          })
      }
-     const {accessToken,refreshstring}= generateToken(user);
-     logger.info("Login success full",user._id);
-     res.status(201).json({
+     const {accessToken,refreshstring}= await generateToken(user);
+     logger.info("Login successful",user.username);
+     res.status(200).json({
          success:true,
-         message:"Login sccuessful ...",
+         message:"Login successful ...",
          accessToken,
          refreshstring,
          userId:user._id
