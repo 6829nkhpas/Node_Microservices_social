@@ -96,7 +96,7 @@ const authRateLimitMiddleware = async (req, res, next) => {
    Routes
 ================================ */
 app.use("/api/auth/register", authRateLimitMiddleware);
-app.use("/api/auth/login", authRateLimitMiddleware);
+app.use("/api/auth/loginuser", authRateLimitMiddleware);
 
 app.use("/api/auth", router);
 

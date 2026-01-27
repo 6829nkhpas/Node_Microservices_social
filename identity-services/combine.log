@@ -74,3 +74,18 @@
 {"level":"info","message":"Registration Endpoint Hit .........","service":"identity-service","timestamp":"2026-01-25T22:12:38.755Z"}
 {"level":"info","message":"validation successful","service":"identity-service","timestamp":"2026-01-25T22:12:38.771Z"}
 {"buffer":{"data":[105,118,149,86,189,20,245,167,45,221,100,107],"type":"Buffer"},"level":"info","message":"User Registered Successfully..","service":"identity-service","timestamp":"2026-01-25T22:12:39.152Z"}
+{"level":"info","message":"Server is listening on port 3001","service":"identity-service","timestamp":"2026-01-27T20:50:46.165Z"}
+{"level":"info","message":"Redis connected","service":"identity-service","timestamp":"2026-01-27T20:50:46.173Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"identity-service","timestamp":"2026-01-27T20:50:47.634Z"}
+{"level":"info","message":"Received POST request to /api/auth/loginuser","service":"identity-service","timestamp":"2026-01-27T20:52:17.449Z"}
+{"level":"info","message":"Received POST request to /api/auth/register","service":"identity-service","timestamp":"2026-01-27T20:53:42.301Z"}
+{"level":"info","message":"Registration Endpoint Hit .........","service":"identity-service","timestamp":"2026-01-27T20:53:42.303Z"}
+{"level":"info","message":"validation successful","service":"identity-service","timestamp":"2026-01-27T20:53:42.308Z"}
+{"buffer":{"data":[105,121,37,214,212,138,121,141,119,200,221,205],"type":"Buffer"},"level":"info","message":"User Registered Successfully..","service":"identity-service","timestamp":"2026-01-27T20:53:42.561Z"}
+{"level":"info","message":"Received POST request to /api/auth/loginuser","service":"identity-service","timestamp":"2026-01-27T20:53:57.646Z"}
+{"level":"info","message":"Server is listening on port 3001","service":"identity-service","timestamp":"2026-01-27T20:54:46.672Z"}
+{"level":"info","message":"Redis connected","service":"identity-service","timestamp":"2026-01-27T20:54:46.680Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"identity-service","timestamp":"2026-01-27T20:54:48.257Z"}
+{"level":"info","message":"Received POST request to /api/auth/loginuser","service":"identity-service","timestamp":"2026-01-27T20:55:21.305Z"}
+{"level":"info","message":"Received POST request to /v1/auth/loginuser","service":"identity-service","timestamp":"2026-01-27T20:56:33.045Z"}
+{"level":"info","message":"Received POST request to /api/auth/loginuser","service":"identity-service","timestamp":"2026-01-27T20:56:46.917Z"}

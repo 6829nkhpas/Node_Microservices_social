@@ -38,3 +38,18 @@
 {"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"level":"error","message":"Redis error connect ECONNREFUSED 127.0.0.1:6379","port":6379,"service":"api-service","stack":"Error: connect ECONNREFUSED 127.0.0.1:6379\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)","syscall":"connect","timestamp":"2026-01-26T13:58:43.320Z"}
 {"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"level":"error","message":"Redis error connect ECONNREFUSED 127.0.0.1:6379","port":6379,"service":"api-service","stack":"Error: connect ECONNREFUSED 127.0.0.1:6379\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)","syscall":"connect","timestamp":"2026-01-26T13:58:43.872Z"}
 {"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"level":"error","message":"Redis error connect ECONNREFUSED 127.0.0.1:6379","port":6379,"service":"api-service","stack":"Error: connect ECONNREFUSED 127.0.0.1:6379\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)","syscall":"connect","timestamp":"2026-01-26T13:58:44.475Z"}
+{"0":"3","1":"0","2":"0","3":"0","level":"info","message":"application is Listning on port :","service":"api-service","timestamp":"2026-01-27T20:50:59.442Z"}
+{"level":"info","message":"API gateway is Runing on : undefined","service":"api-service","timestamp":"2026-01-27T20:50:59.444Z"}
+{"level":"info","message":"Identity Service is Runing on : http://localhost:3001","service":"api-service","timestamp":"2026-01-27T20:50:59.444Z"}
+{"level":"info","message":"Redis is Runing on : redis://localhost:6379","service":"api-service","timestamp":"2026-01-27T20:50:59.444Z"}
+{"level":"info","message":"Redis connected","service":"api-service","timestamp":"2026-01-27T20:50:59.449Z"}
+{"level":"info","message":"Received POST request to /v1/auth/loginuser","service":"api-service","timestamp":"2026-01-27T20:52:17.420Z"}
+{"level":"info","message":"Response from Identity Service for POST /loginuser: 404","service":"api-service","timestamp":"2026-01-27T20:52:17.461Z"}
+{"level":"info","message":"Received POST request to /v1/auth/register","service":"api-service","timestamp":"2026-01-27T20:53:42.297Z"}
+{"level":"info","message":"Response from Identity Service for POST /register: 201","service":"api-service","timestamp":"2026-01-27T20:53:42.640Z"}
+{"level":"info","message":"Received POST request to /v1/auth/loginuser","service":"api-service","timestamp":"2026-01-27T20:53:57.643Z"}
+{"level":"info","message":"Response from Identity Service for POST /loginuser: 404","service":"api-service","timestamp":"2026-01-27T20:53:57.648Z"}
+{"level":"info","message":"Received POST request to /v1/auth/loginuser","service":"api-service","timestamp":"2026-01-27T20:55:21.292Z"}
+{"level":"info","message":"Response from Identity Service for POST /loginuser: 404","service":"api-service","timestamp":"2026-01-27T20:55:21.310Z"}
+{"level":"info","message":"Received POST request to /v1/auth/loginuser","service":"api-service","timestamp":"2026-01-27T20:56:46.914Z"}
+{"level":"info","message":"Response from Identity Service for POST /loginuser: 404","service":"api-service","timestamp":"2026-01-27T20:56:46.922Z"}
