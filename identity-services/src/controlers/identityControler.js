@@ -146,5 +146,39 @@ const refreshTokenuser = async (req,res)=>{
         })
     }
 }
-    
-module.exports = {registeruser,loginuser,refreshTokenuser};
+
+//Logout users
+     const logoutuser =async(req,res)=>{
+      logger.info("Logout endpoint hit .......");
+      try {
+        const refreshToken = req.body.refreshToken;
+        if (!refreshToken) {
+            logger.warn("No refresh token provided");
+            return res.status(400).json({
+                success: false,
+                message: "No refresh token provided"
+            });
+        }
+        const storedToken = await RefreshToken.findOne({ Token: refreshToken });
+        if (!storedToken ) {
+            logger.warn("Invalid or expired refresh token");
+            return res.status(401).json({
+                success: false,
+                message: "Invalid or expired refresh token"
+            });
+        }
+        await RefreshToken.deleteOne({ _id: storedToken._id });
+        logger.info("Logout successful");
+        res.status(200).json({
+            success: true,
+            message: "Logout successful"
+        });
+      } catch (error) {
+        logger.error("Logout failed error",error);
+        res.status(500).json({
+            success: false,
+            message: "Internal Server Error"
+        })
+      }  
+     }
+module.exports = {registeruser,loginuser,refreshTokenuser,logoutuser};
