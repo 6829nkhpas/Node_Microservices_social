@@ -1,6 +1,6 @@
 const Post = require('../models/postModel');
 const logger = require('../utils/logger.js');
- const Post =require("../models/postModel.js");
+
 // Create a new post
 const createPost = async (req, res) => {
     logger.info("Create Post Endpoint Hit .........");
@@ -29,6 +29,31 @@ const createPost = async (req, res) => {
         
     }
 }
-
+const getPost = async (req, res) => {
+    // to be implemented
+    try {
+        
+    } catch (error) {
+        logger.warn("Error During fetching a Post",error);
+        return res.status(500).json({
+            success:false,
+            message: " server error occured during post fetch "
+        })
+        
+    }
+}
+const deletePost = async (req, res) => {
+    // to be implemented
+    try {
+        
+    } catch (error) {
+        logger.warn("Error During deleting a Post",error);
+        return res.status(500).json({
+            success:false,
+            message: " server error occured during post deletion "
+        })
+        
+    }
+}
 
 module.exports =createPost;
