@@ -18,6 +18,7 @@ const postSchema = new moongoose.Schema({
         default: Date.now
     }   
 }, { timestamps: true });
+postSchema.index({ content: 'text' });
 const Post = moongoose.model('Post', postSchema);
 
 module.exports = Post;
