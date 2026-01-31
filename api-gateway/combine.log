@@ -63,3 +63,9 @@
 {"level":"info","message":"Response from Identity Service for POST /login: 400","service":"api-service","timestamp":"2026-01-27T21:02:16.387Z"}
 {"level":"info","message":"Received POST request to /v1/auth/login","service":"api-service","timestamp":"2026-01-27T21:02:18.479Z"}
 {"level":"info","message":"Response from Identity Service for POST /login: 400","service":"api-service","timestamp":"2026-01-27T21:02:18.485Z"}
+{"0":"3","1":"0","2":"0","3":"0","level":"info","message":"application is Listning on port :","service":"api-service","timestamp":"2026-01-31T01:54:24.270Z"}
+{"level":"info","message":"API gateway is Runing on : undefined","service":"api-service","timestamp":"2026-01-31T01:54:24.271Z"}
+{"level":"info","message":"Identity Service is Runing on : http://localhost:3001","service":"api-service","timestamp":"2026-01-31T01:54:24.272Z"}
+{"level":"info","message":"Posts Service is Runing on : http://localhost:3002","service":"api-service","timestamp":"2026-01-31T01:54:24.272Z"}
+{"level":"info","message":"Redis is Runing on : redis://localhost:6379","service":"api-service","timestamp":"2026-01-31T01:54:24.272Z"}
+{"level":"info","message":"Redis connected","service":"api-service","timestamp":"2026-01-31T01:54:24.278Z"}
