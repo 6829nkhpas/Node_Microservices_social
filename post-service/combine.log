@@ -1,0 +1,3 @@
+{"level":"info","message":"Post Service running on port 3002","service":"post-service","timestamp":"2026-01-31T00:44:08.234Z"}
+{"level":"info","message":"Connected to Redis successfully","service":"post-service","timestamp":"2026-01-31T00:44:08.242Z"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"post-service","timestamp":"2026-01-31T00:44:09.332Z"}

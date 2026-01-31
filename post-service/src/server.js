@@ -3,7 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const helmet = require('helmet');
 const dotenv = require('dotenv');
-const postRoutes = require('./routes/postRoutes.js');
+const postRoutes = require('./routes/post-routes.js');
 const errorhandler = require('./middlewares/errorhandler.js');
 const logger = require('./utils/logger.js');
 const redis = require('ioredis');
@@ -43,6 +43,11 @@ app.use('/api/post',(req,res,next)=>{
 }, postRoutes);
 
 // implement ratelimiting in sensative routes
+const sensativeRoutelimiter = (req, res, next) => {
+    // to be implemented
+    
+    next();
+}
 
 
 app.use(errorhandler);
