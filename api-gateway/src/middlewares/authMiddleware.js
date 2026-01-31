@@ -13,11 +13,11 @@ const validateAuthToken = (req, res, next) => {
 
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
-        req.user = decoded;
+        req.user = decoded.user;
         next();
     } catch (error) {
         logger.warn("Invalid token", error);
-        return res.status(403).json({ message: 'Access Denied: Invalid Token' });
+        return res.status(429).json({ message: 'Access Denied: Invalid Token' });
     }
 };
 

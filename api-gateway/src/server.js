@@ -86,12 +86,29 @@ app.use('/v1/auth', proxy(process.env.IDENTITY_SERVICE_URL, {
     return proxyResData;
 }})); 
 
+/* ==============================
+   Proxy Setup for post service
+================================ */
+app.use('/v1/posts', proxy(process.env.POST_SERVICE_URL,{
+    ...proxyOptions,
+    proxyReqOptDecorator:(proxyReqOpts,srcReq) =>{
+        proxyReqOpts.headers["Content-Type"] ="application/json"
+        proxyReqOpts.headers["x-user-id"] = srcReq.user.userID;
+
+        return proxyReqOpts;
+    },
+    userResDecorator:(proxyRes,proxyResData,req,res) =>{
+    logger.info(`Response from Post Service for ${req.method} ${req.url}: ${proxyRes.statusCode}`);
+    return proxyResData;
+}}));
+
 app.use(errorhandler);
 
 app.listen(PORT,()=>{
     logger.info("application is Listning on port :",PORT);
     logger.info(`API gateway is Runing on : ${process.env.points}`);
     logger.info(`Identity Service is Runing on : ${process.env.IDENTITY_SERVICE_URL}`);
+        logger.info(`Posts Service is Runing on : ${process.env.POST_SERVICE_URL}`);
     logger.info(`Redis is Runing on : ${process.env.REDIS_URL}`);
 })
 
