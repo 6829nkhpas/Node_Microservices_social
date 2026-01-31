@@ -1,0 +1,13 @@
+{"level":"info","message":"Server is listening on port 3001","service":"identity-service","timestamp":"2026-01-31T22:19:02.388Z"}
+{"level":"info","message":"Redis connected","service":"identity-service","timestamp":"2026-01-31T22:19:02.414Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"identity-service","timestamp":"2026-01-31T22:19:03.426Z"}
+{"level":"info","message":"Received POST request to /api/auth/loginuser","service":"identity-service","timestamp":"2026-01-31T22:19:35.413Z"}
+{"level":"info","message":"Received POST request to /api/auth/loginuser","service":"identity-service","timestamp":"2026-01-31T22:20:02.573Z"}
+{"level":"info","message":"Received POST request to /api/auth/register","service":"identity-service","timestamp":"2026-01-31T22:21:07.645Z"}
+{"level":"info","message":"Registration Endpoint Hit .........","service":"identity-service","timestamp":"2026-01-31T22:21:07.649Z"}
+{"level":"info","message":"validation successful","service":"identity-service","timestamp":"2026-01-31T22:21:07.662Z"}
+{"buffer":{"data":[105,126,128,83,233,52,70,219,83,54,188,223],"type":"Buffer"},"level":"info","message":"User Registered Successfully..","service":"identity-service","timestamp":"2026-01-31T22:21:08.097Z"}
+{"level":"info","message":"Received POST request to /api/auth/posts/createPost","service":"identity-service","timestamp":"2026-01-31T22:22:48.003Z"}
+{"level":"info","message":"Received POST request to /api/auth/posts/createPost","service":"identity-service","timestamp":"2026-01-31T22:23:02.941Z"}
+{"level":"info","message":"Received POST request to /api/auth/posts/createPost","service":"identity-service","timestamp":"2026-01-31T22:23:32.762Z"}
+{"level":"info","message":"Received POST request to /api/auth/posts/createPost","service":"identity-service","timestamp":"2026-01-31T22:24:48.432Z"}

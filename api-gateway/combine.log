@@ -69,3 +69,25 @@
 {"level":"info","message":"Posts Service is Runing on : http://localhost:3002","service":"api-service","timestamp":"2026-01-31T01:54:24.272Z"}
 {"level":"info","message":"Redis is Runing on : redis://localhost:6379","service":"api-service","timestamp":"2026-01-31T01:54:24.272Z"}
 {"level":"info","message":"Redis connected","service":"api-service","timestamp":"2026-01-31T01:54:24.278Z"}
+{"0":"3","1":"0","2":"0","3":"0","level":"info","message":"application is Listning on port :","service":"api-service","timestamp":"2026-01-31T22:18:44.988Z"}
+{"level":"info","message":"API gateway is Runing on : undefined","service":"api-service","timestamp":"2026-01-31T22:18:44.992Z"}
+{"level":"info","message":"Identity Service is Runing on : http://localhost:3001","service":"api-service","timestamp":"2026-01-31T22:18:44.993Z"}
+{"level":"info","message":"Posts Service is Runing on : http://localhost:3002","service":"api-service","timestamp":"2026-01-31T22:18:44.993Z"}
+{"level":"info","message":"Redis is Runing on : redis://localhost:6379","service":"api-service","timestamp":"2026-01-31T22:18:44.994Z"}
+{"level":"info","message":"Redis connected","service":"api-service","timestamp":"2026-01-31T22:18:45.010Z"}
+{"level":"info","message":"Received POST request to /v1/auth/loginuser","service":"api-service","timestamp":"2026-01-31T22:19:35.357Z"}
+{"level":"info","message":"Response from Identity Service for POST /loginuser: 404","service":"api-service","timestamp":"2026-01-31T22:19:35.427Z"}
+{"level":"info","message":"Received POST request to /v1/auth/loginuser","service":"api-service","timestamp":"2026-01-31T22:20:02.566Z"}
+{"level":"info","message":"Response from Identity Service for POST /loginuser: 404","service":"api-service","timestamp":"2026-01-31T22:20:02.579Z"}
+{"level":"info","message":"Received POST request to /v1/auth/register","service":"api-service","timestamp":"2026-01-31T22:21:07.634Z"}
+{"level":"info","message":"Response from Identity Service for POST /register: 201","service":"api-service","timestamp":"2026-01-31T22:21:08.181Z"}
+{"level":"info","message":"Received POST request to /v1/auth/posts/createPost","service":"api-service","timestamp":"2026-01-31T22:22:47.994Z"}
+{"level":"info","message":"Response from Identity Service for POST /posts/createPost: 404","service":"api-service","timestamp":"2026-01-31T22:22:48.010Z"}
+{"level":"info","message":"Received POST request to /v1/auth/posts/createPost","service":"api-service","timestamp":"2026-01-31T22:23:02.935Z"}
+{"level":"info","message":"Response from Identity Service for POST /posts/createPost: 404","service":"api-service","timestamp":"2026-01-31T22:23:02.944Z"}
+{"level":"info","message":"Received POST request to /v1/auth/posts/createPost","service":"api-service","timestamp":"2026-01-31T22:23:32.756Z"}
+{"level":"info","message":"Response from Identity Service for POST /posts/createPost: 404","service":"api-service","timestamp":"2026-01-31T22:23:32.765Z"}
+{"level":"info","message":"Received POST request to /v1/auth/posts/createPost","service":"api-service","timestamp":"2026-01-31T22:24:48.426Z"}
+{"level":"info","message":"Response from Identity Service for POST /posts/createPost: 404","service":"api-service","timestamp":"2026-01-31T22:24:48.437Z"}
+{"level":"info","message":"Received POST request to /v1/posts/createPost","service":"api-service","timestamp":"2026-01-31T22:25:48.366Z"}
+{"level":"error","message":"proxy error Cannot read properties of undefined (reading 'userID')","service":"api-service","timestamp":"2026-01-31T22:25:48.369Z"}
