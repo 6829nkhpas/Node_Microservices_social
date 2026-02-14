@@ -23,6 +23,7 @@ const createPost = async (req, res) => {
             mediaId:mediaId || []
 
         });
+        
         await newlycreatedPost.save();
         logger.info("Post Created Success Fully!");
         return res.status(201).json({
@@ -42,6 +43,23 @@ const createPost = async (req, res) => {
 const getPost = async (req, res) => {
     // to be implemented
     try {
+        const page = parseInt(req.query.page) || 1;
+        const limit = parseInt(req.query.limit) || 10;
+        const skip = (page - 1) * limit;
+
+        const posts = await Post.find()
+            .sort({ createdAt: -1 })
+            .skip(skip)
+            .limit(limit)
+            .populate('user', 'username profilePicture')
+            .populate('mediaId');
+
+        logger.info("Posts fetched successfully!");
+        return res.status(200).json({
+            success: true,
+            message: "Posts fetched successfully",
+            data: posts
+        });
         
     } catch (error) {
         logger.warn("Error During fetching a Post",error);
